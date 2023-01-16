@@ -1,4 +1,14 @@
-# React 18 frontend with react bootstrap
+# React 18.2 frontend with react bootstrap 2.7
+
+## step 02 add bootstrap
+Added the react-bootstrap dependency
+* _npm install --save react-bootstrap bootstrap_
+
+Imported the bootstrap css
+
+    import 'bootstrap/dist/css/bootstrap.min.css';
+
+Coded a simple bootstrap Container in the App component.
 
 ## step 01 create development environment
 To get started did the following.
