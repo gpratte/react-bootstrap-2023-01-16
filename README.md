@@ -1,5 +1,9 @@
 # React 18.2 frontend with react bootstrap 2.7
 
+## step 03 react router
+Added the react routing dependency.
+* _npm i --save react-router-dom_
+
 ## step 02 add bootstrap
 Added the react-bootstrap dependency
 * _npm install --save react-bootstrap bootstrap_
