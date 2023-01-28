@@ -1,13 +1,12 @@
 import React from 'react';
+import {getTime} from "./utils";
 
 const Childfunctionpropwithmemo = React.memo(function childfunctionpropwithmemo({logTime}) {
-
   console.log('rendering Childfunctionpropwithmemo')
   logTime('Childfunctionpropwithmemo');
-
   return (
     <div>
-      <h3>Function prop with memo</h3>
+      <h3>{getTime()}  Function prop with memo</h3>
     </div>
   );
 });

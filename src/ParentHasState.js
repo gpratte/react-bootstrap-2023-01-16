@@ -5,6 +5,7 @@ import Childnopropsnomemo from "./Childnopropsnomemo";
 import Childnamepropnomemo from "./Childnamepropnomemo";
 import Childnamepropwithmemo from "./Childnamepropwithmemo";
 import Childfunctionpropnomemo from "./Childfunctionpropnomemo";
+import Childfunctionpropwithmemo from "./Childfunctionpropwithmemo";
 
 function ParentHasState() {
 
@@ -16,11 +17,12 @@ function ParentHasState() {
   return (
     <>
       <h1>Has State</h1>
-      <Childnopropswithmemo/>
       <Childnopropsnomemo/>
+      <Childnopropswithmemo/>
       <Childnamepropnomemo name={name}/>
       <Childnamepropwithmemo name={name}/>
       <Childfunctionpropnomemo logTime={logTime}/>
+      <Childfunctionpropwithmemo logTime={logTime}/>
 
       <Mymodel showModel={showModel} setShowModel={setShowModel} setName={setName}/>
     </>

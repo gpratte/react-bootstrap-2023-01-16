@@ -13,8 +13,8 @@ function ParentNoState() {
   return (
     <>
       <h1>No State</h1>
-      <Childnopropswithmemo/>
       <Childnopropsnomemo/>
+      <Childnopropswithmemo/>
       <Childnamepropnomemo name={name}/>
       <Childnamepropwithmemo name={name}/>
 
