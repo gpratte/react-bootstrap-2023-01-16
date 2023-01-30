@@ -8,9 +8,9 @@ import Childfunctionpropwithmemo from "./Childfunctionpropwithmemo";
 import Childcallbackfunctionpropnomemo from "./Childcallbackfunctionpropnomemo";
 import Childcallbackfunctionpropwithmemo from "./Childcallbackfunctionpropwithmemo";
 
-import useParentContext from "./useParentContext";
+import useCustomHook from "./useCustomHook";
 
-export default function ParentHasContext() {
+export default function ParentHasCustomHook() {
 
   const {
     showModel,
@@ -19,11 +19,11 @@ export default function ParentHasContext() {
     setName,
     logTime,
     logTime2
-  } = useParentContext();
+  } = useCustomHook();
 
   return (
     <>
-      <h1>Has Context</h1>
+      <h1>Has Custom Hook</h1>
       <Childnopropsnomemo/>
       <Childnamepropnomemo name={name}/>
       <Childfunctionpropnomemo logTime={logTime}/>

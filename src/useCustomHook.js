@@ -1,6 +1,6 @@
 import {useCallback, useState} from "react";
 
-export default function useParentContext() {
+export default function useCustomHook() {
   const [showModel, setShowModel] = useState(true);
   const [name, setName] = useState('Initial Name');
 
