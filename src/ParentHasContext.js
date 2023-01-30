@@ -1,5 +1,4 @@
 import Mymodel from "./Mymodel";
-import React, {useCallback, useState} from "react";
 import Childnopropsnomemo from "./Childnopropsnomemo";
 import Childnopropswithmemo from "./Childnopropswithmemo";
 import Childnamepropnomemo from "./Childnamepropnomemo";
@@ -9,23 +8,22 @@ import Childfunctionpropwithmemo from "./Childfunctionpropwithmemo";
 import Childcallbackfunctionpropnomemo from "./Childcallbackfunctionpropnomemo";
 import Childcallbackfunctionpropwithmemo from "./Childcallbackfunctionpropwithmemo";
 
-function ParentHasState() {
+import useParentContext from "./useParentContext";
 
-  const [showModel, setShowModel] = useState(true);
-  const [name, setName] = useState('Initial Name');
+export default function ParentHasContext() {
 
-  const logTime = (from) => console.log('In logTime, from ' + from + ' ' + Date.now());
-
-  const logTime2 = useCallback(
-    (from) => {
-      console.log('In LogTime2, from ' + from + ' ' + Date.now())    },
-    [],
-  );
+  const {
+    showModel,
+    setShowModel,
+    name,
+    setName,
+    logTime,
+    logTime2
+  } = useParentContext();
 
   return (
     <>
-      <h1>Has State</h1>
-      {/* The following have no memo so they always render when this parent renders*/}
+      <h1>Has Context</h1>
       <Childnopropsnomemo/>
       <Childnamepropnomemo name={name}/>
       <Childfunctionpropnomemo logTime={logTime}/>
@@ -52,5 +50,3 @@ function ParentHasState() {
     </>
   );
 }
-
-export default ParentHasState;
