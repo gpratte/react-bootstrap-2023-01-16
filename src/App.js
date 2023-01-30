@@ -5,6 +5,8 @@ import ParentHasState from "./ParentHasState";
 import ParentNoState from "./ParentNoState";
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./Home";
+import ParentHasContext from "./ParentHasContext";
+import React from "react";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           <Link to="/hasstate">
             <Button variant="outline-secondary"> Has State </Button>
           </Link>
+          <Link to="/hascontext">
+            <Button variant="outline-secondary"> Has Context </Button>
+          </Link>
           <Link to="/nostate">
             <Button variant="outline-secondary"> No State </Button>
           </Link>
@@ -24,6 +29,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/hasstate' element={<ParentHasState/>}/>
+            <Route path='/hascontext' element={<ParentHasContext/>}/>
             <Route path='/nostate' element={<ParentNoState/>}/>
         </Routes>
         </Col>

@@ -1,8 +1,6 @@
 
 export function getTime() {
   var today = new Date();
-  var day = today.getDay();
-  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
   var hour = today.getHours();
   var minute = today.getMinutes();
   var second = today.getSeconds();
