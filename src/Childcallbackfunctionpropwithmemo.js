@@ -11,4 +11,4 @@ const Childcallbackfunctionpropwithmemo = React.memo(function childcallbackfunct
   );
 });
 
-export default Childcallbackfunctionpropwithmemo;
+export default Childcallbackfunctionpropwithmemo
