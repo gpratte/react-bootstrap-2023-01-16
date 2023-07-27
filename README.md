@@ -17,6 +17,9 @@ Coded a simple bootstrap Container in the App component.
 ## step 01 create development environment
 To get started did the following.
 
+node version: 18.12.1
+npm version: 8.19.2
+
 From https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
 * _npx create-react-app react-bootstrap-2023-01-16_
 * _cd react-bootstrap-2023-01-16_

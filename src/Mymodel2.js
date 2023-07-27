@@ -1,7 +1,7 @@
 import {Button, Modal} from "react-bootstrap";
 import {useState} from "react";
 
-function Mymodel2(props) {
+function Mymodel2() {
 
   const [showModel, setShowModel] = useState(true);
   const handleClose = () => setShowModel(false);

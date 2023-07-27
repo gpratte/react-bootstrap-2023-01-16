@@ -7,6 +7,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import ParentHasCustomHook from "./ParentHasCustomHook";
 import React from "react";
+import ParentIsContextProvider from "./ParentIsContextProvider";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           <Link to="/hascustom">
             <Button variant="outline-secondary"> Has Custom Hook </Button>
           </Link>
+          <Link to="/isprovider">
+            <Button variant="outline-secondary"> Is Context Provider </Button>
+          </Link>
           <Link to="/nostate">
             <Button variant="outline-secondary"> No State </Button>
           </Link>
@@ -30,6 +34,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/hasstate' element={<ParentHasState/>}/>
             <Route path='/hascustom' element={<ParentHasCustomHook/>}/>
+            <Route path='/isprovider' element={<ParentIsContextProvider/>}/>
             <Route path='/nostate' element={<ParentNoState/>}/>
         </Routes>
         </Col>
