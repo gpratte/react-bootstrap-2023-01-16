@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {getTime} from "./utils";
 import {useParentContext} from "./ParentIsContextProvider";
 
-const Childnamefromproviderwithmemo = React.memo(function Childnamefromproviderwithmemo() {
+const Childnamefromproviderwithmemo = memo(function Childnamefromproviderwithmemo() {
   console.log('rendering Childnamefromproviderwithmemo')
   const {name} = useParentContext();
 

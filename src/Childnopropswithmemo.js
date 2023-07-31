@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {getTime} from "./utils";
 
-const Childnopropswithmemo = React.memo(function childnopropswithmemo() {
+const Childnopropswithmemo = memo(function childnopropswithmemo() {
   console.log('rendering Childnopropswithmemo')
   return (
     <div>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {getTime} from "./utils";
 
-const Childfunctionpropwithmemo = React.memo(function childfunctionpropwithmemo({logTime}) {
+const Childfunctionpropwithmemo = memo(function childfunctionpropwithmemo({logTime}) {
   console.log('rendering Childfunctionpropwithmemo')
   logTime('Childfunctionpropwithmemo');
   return (

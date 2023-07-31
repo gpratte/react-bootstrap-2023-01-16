@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Mymodel2 from "./Mymodel2";
+import Mymodal2 from "./Mymodal2";
 import Childnopropswithmemo from "./Childnopropswithmemo";
 import Childnopropsnomemo from "./Childnopropsnomemo";
 import Childnamepropnomemo from "./Childnamepropnomemo";
@@ -12,17 +11,14 @@ function ParentNoState() {
 
   return (
     <>
+      {console.log('rendering ParentNoState')}
       <h1>No State</h1>
       <Childnopropsnomemo/>
       <Childnopropswithmemo/>
       <Childnamepropnomemo name={name}/>
       <Childnamepropwithmemo name={name}/>
 
-      <Button variant="primary">
-        Launch demo modal
-      </Button>
-
-      <Mymodel2 />
+      <Mymodal2 />
     </>
   );
 }

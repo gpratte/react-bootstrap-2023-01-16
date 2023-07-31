@@ -1,8 +1,7 @@
 import React, {createContext, useContext, useState} from "react";
 import Childnamefromprovidernomemo from "./Childnamefromprovidernomemo";
 import {getTime} from "./utils";
-import Mymodel from "./Mymodel";
-import Mymodel2 from "./Mymodel2";
+import Mymodal from "./Mymodal";
 import Childnamefromproviderwithmemo from "./Childnamefromproviderwithmemo";
 
 const ParentContext = createContext({});
@@ -15,11 +14,14 @@ export default function ParentIsContextProvider() {
 
   return (
     <ParentContext.Provider value={{name}}>
+      {console.log('rendering ParentIsContextProvider')}
       <h1>Is Context Provider</h1>
+      {/* No memo so it always render when this parent renders*/}
       <Childnamefromprovidernomemo/>
+      {/* Will rerender because of the useContext hook even though is uses memo
+          https://legacy.reactjs.org/docs/hooks-reference.html#usecontext */}
       <Childnamefromproviderwithmemo/>
-      <Mymodel showModel={showModel} setShowModel={setShowModel} setName={setName}/>
-      {/*<Mymodel2/>*/}
+      <Mymodal showModel={showModel} setShowModel={setShowModel} setName={setName}/>
     </ParentContext.Provider>
   );
 }
