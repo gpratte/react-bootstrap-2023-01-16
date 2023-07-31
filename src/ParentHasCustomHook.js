@@ -1,4 +1,4 @@
-import Mymodel from "./Mymodel";
+import Mymodal from "./Mymodal";
 import Childnopropsnomemo from "./Childnopropsnomemo";
 import Childnopropswithmemo from "./Childnopropswithmemo";
 import Childnamepropnomemo from "./Childnamepropnomemo";
@@ -23,7 +23,9 @@ export default function ParentHasCustomHook() {
 
   return (
     <>
+      {console.log('rendering ParentHasCustomHook')}
       <h1>Has Custom Hook</h1>
+      {/* The following have no memo so they always render when this parent renders*/}
       <Childnopropsnomemo/>
       <Childnamepropnomemo name={name}/>
       <Childfunctionpropnomemo logTime={logTime}/>
@@ -31,22 +33,23 @@ export default function ParentHasCustomHook() {
 
       <br/>
 
-      {/* Memoed child does not render when this parent renders*/}
+      {/* Memoed child does not rerender when this parent rerenders because
+          there are no props and hence they have not changed have not changed */}
       <Childnopropswithmemo/>
 
-      {/* Memoed child does not render when this parent renders*/}
-      {/* Does render when the name prop changes */}
+      {/* Memoed child does not rerender when this parent rerenders
+          unless the name prop changed */}
       <Childnamepropwithmemo name={name}/>
 
-      {/* Does render even though the child is memoed because the reference */}
-      {/* to the function passed in props is always different  */}
+      {/* Does render even though the child is memoed because the reference
+          to the function passed in props is always different  */}
       <Childfunctionpropwithmemo logTime={logTime}/>
 
-      {/* Memoed child does not render when this parent renders because the */}
-      {/*reference to the function passed in props is also memoed by useCallback*/}
+      {/* Memoed child does not render when this parent renders because the
+          reference to the function passed in props is memoed by useCallback */}
       <Childcallbackfunctionpropwithmemo logTime2={logTime2}/>
 
-      <Mymodel showModel={showModel} setShowModel={setShowModel} setName={setName}/>
+      <Mymodal showModel={showModel} setShowModel={setShowModel} setName={setName}/>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import {Button, Modal} from "react-bootstrap";
 
-function Mymodel(props) {
+function Mymodal(props) {
 
   const handleClose = () => props.setShowModel(false);
   const handleSave = () => {
@@ -27,4 +27,4 @@ function Mymodel(props) {
   )
 }
 
-export default Mymodel
+export default Mymodal

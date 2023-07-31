@@ -1,7 +1,7 @@
 import {Button, Modal} from "react-bootstrap";
 import {useState} from "react";
 
-function Mymodel2() {
+function Mymodal2() {
 
   const [showModel, setShowModel] = useState(true);
   const handleClose = () => setShowModel(false);
@@ -24,4 +24,4 @@ function Mymodel2() {
   )
 }
 
-export default Mymodel2
+export default Mymodal2

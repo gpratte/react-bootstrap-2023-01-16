@@ -1,7 +1,8 @@
 import React from 'react';
 import {getTime} from "./utils";
 
-function Childnamepropnomemo({name}) {
+function Childnamepropnomemo(props) {
+  const {name} = props;
   console.log('rendering Childnamepropnomemo')
   return (
     <div>

@@ -1,4 +1,4 @@
-import Mymodel from "./Mymodel";
+import Mymodal from "./Mymodal";
 import React, {useCallback, useState} from "react";
 import Childnopropsnomemo from "./Childnopropsnomemo";
 import Childnopropswithmemo from "./Childnopropswithmemo";
@@ -16,6 +16,7 @@ function ParentHasState() {
 
   const logTime = (from) => console.log('In logTime, from ' + from + ' ' + Date.now());
 
+  // hook to memorize the function
   const logTime2 = useCallback(
     (from) => {
       console.log('In LogTime2, from ' + from + ' ' + Date.now())    },
@@ -24,6 +25,7 @@ function ParentHasState() {
 
   return (
     <>
+      {console.log('rendering ParentHasState')}
       <h1>Has State</h1>
       {/* The following have no memo so they always render when this parent renders*/}
       <Childnopropsnomemo/>
@@ -33,22 +35,23 @@ function ParentHasState() {
 
       <br/>
 
-      {/* Memoed child does not render when this parent renders*/}
+      {/* Memoed child does not rerender when this parent rerenders because
+          there are no props and hence they have not changed have not changed */}
       <Childnopropswithmemo/>
 
-      {/* Memoed child does not render when this parent renders*/}
-      {/* Does render when the name prop changes */}
+      {/* Memoed child does not rerender when this parent rerenders
+          unless the name prop changed */}
       <Childnamepropwithmemo name={name}/>
 
-      {/* Does render even though the child is memoed because the reference */}
-      {/* to the function passed in props is always different  */}
+      {/* Does render even though the child is memoed because the reference
+          to the function passed in props is always different  */}
       <Childfunctionpropwithmemo logTime={logTime}/>
 
-      {/* Memoed child does not render when this parent renders because the */}
-      {/*reference to the function passed in props is also memoed by useCallback*/}
+      {/* Memoed child does not render when this parent renders because the
+          reference to the function passed in props is memoed by useCallback */}
       <Childcallbackfunctionpropwithmemo logTime2={logTime2}/>
 
-      <Mymodel showModel={showModel} setShowModel={setShowModel} setName={setName}/>
+      <Mymodal showModel={showModel} setShowModel={setShowModel} setName={setName}/>
     </>
   );
 }
